@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-Oct-2023, 9:34:49 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	
+    <class name="com.java.jsf.model.Admin" table="Admin">
+        <id name="adminId" type="int">
+            <column name="adminId" />
+            <generator class="increment" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="userName" />
+        </property>
+       
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+
+    </class>
+     <query name="login">
+        FROM Admin WHERE userName = :userName AND password = :password
+    </query>
+   
+    
+</hibernate-mapping>
